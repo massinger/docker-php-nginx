@@ -8,7 +8,7 @@ RUN apk --no-cache add php7 php7-fpm php7-mysqli php7-json php7-openssl php7-cur
     php7-mbstring php7-gd nginx supervisor curl
 RUN apk --no-cache add php7-mysqli php7-pdo_mysql php7-mbstring php7-json php7-zlib php7-gd php7-intl php7-session php7-fpm php7-memcached php7-curl php7-posix php7-fileinfo php7-simplexml php7-opcache
 RUN apk --no-cache add php7-tokenizer php7-ctype php7-bcmath php7-openssl php7-dom php7-iconv php7-zip php7-pcntl php7-xmlwriter
-#fix the apline bug with iconv()
+#fix the alpine bug with iconv()
 RUN apk add --no-cache --repository http://dl-3.alpinelinux.org/alpine/edge/testing gnu-libiconv
 ENV LD_PRELOAD /usr/lib/preloadable_libiconv.so php
 # Configure nginx
